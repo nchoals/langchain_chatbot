@@ -1,0 +1,12 @@
+What is this chatbot for?,This chatbot helps you classify the content of your emails before you send them. It can determine if your email contains sensitive or non-sensitive information and whether it is private or public.
+How do I upload an email for classification?,Simply upload the email content as a text file or you can just send the whole text here.
+Can I ask the chatbot to reclassify an email?,"Yes, you can request the chatbot to reclassify an email if you believe the initial classification is incorrect. Just provide the email content again and specify your request."
+Is my email content secure?,"Yes, your email content is processed securely. We follow strict data protection protocols to ensure your information remains private and secure."
+Does the chatbot store my email content?,The chatbot does not store your email content permanently. It processes the information temporarily to classify it and then deletes the data.
+What kind of information is considered sensitive?,"Sensitive information typically includes personal data such as addresses, phone numbers, social security numbers, credit card details, and other private information."
+What are the different classifications the chatbot can assign to emails?,"The chatbot can classify emails as open, closed, sensitive, non-sensitive, private, or public."
+How does the chatbot determine the classification of an email?,The chatbot uses natural language processing (NLP) techniques to analyze the email content and classify it based on predefined categories.
+Can I trust the chatbot's classification accuracy?,"While the chatbot is designed to be highly accurate, it is always good to review the classification, especially for sensitive or critical information."
+What is considered a non-sensitive email?,"A non-sensitive email contains information that does not include personal data, financial details, or any confidential information. It is generally safe to share publicly."
+How can I ensure my emails are correctly classified?,"Provide clear and detailed information in your emails. If needed, you can manually review the classification provided by the chatbot before sending the email."
+Can the chatbot handle attachments in emails?,"Currently, the chatbot primarily analyzes text content. For attachments, please refer to our detailed guidelines on how to handle and classify attachments manually."

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classification</title>
+</head>
+<body>
+
+    <h2>Upload Files</h2>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="files[]" multiple>
+        <input type="submit" value="Upload">
+    </form>
+
+    <h2>Search</h2>
+    <form action="/search" method="post">
+        <input type="text" name="query" placeholder="Enter search query">
+        <input type="submit" value="Search">
+    </form>
+
+    <h2>Show All Contents</h2>
+    <form action="/show_contents" method="get">
+        <input type="submit" value="Show Contents">
+    </form>
+
+    {% if results %}
+        <h2>Search Results</h2>
+        <pre>{{ results }}</pre>
+    {% endif %}
+
+    {% if all_contents %}
+        <h2>All Uploaded File Contents</h2>
+        <pre>{{ all_contents }}</pre>
+    {% endif %}
+</body>
+</html>
