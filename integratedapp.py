@@ -15,7 +15,7 @@ from docx import Document
 from pptx import Presentation
 import csv
 from txtai.embeddings import Embeddings
-
+#test commit
 load_dotenv()
 
 # Configure the API key
