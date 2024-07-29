@@ -200,23 +200,24 @@ def main():
                     st.session_state.messages.append({"role": "assistant", "content": response})
                     st.markdown(f"Assistant: {response}")
 
-    st.title("Search and View Content")
-    search_query = st.text_input("Enter search query")
-    if st.button("Search"):
-        if search_query:
-            results = search_txtai(search_query)
-            st.write("Search Results:")
-            for result in results:
-                st.write(result)
-        else:
-            st.write("Please enter a query to search.")
+    with st.sidebar:
+        st.title("Search and View Content")
+        search_query = st.text_input("Enter search query")
+        if st.button("Search"):
+            if search_query:
+                results = search_txtai(search_query)
+                st.write("Search Results:")
+                for result in results:
+                    st.write(result)
+            else:
+                st.write("Please enter a query to search.")
 
-    if st.button("View Content"):
-        if uploaded_files:
-            st.write("Content of the uploaded files:")
-            st.write(all_text)
-        else:
-            st.write("No files uploaded.")
+        if st.button("View Content"):
+            if uploaded_files:
+                st.write("Content of the uploaded files:")
+                st.write(all_text)
+            else:
+                st.write("No files uploaded.")
 
 if __name__ == "__main__":
     main()
