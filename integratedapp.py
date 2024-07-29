@@ -21,7 +21,6 @@ load_dotenv()
 
 # Configure the API key
 API_KEY = os.getenv("API_KEY")
-
 genai.configure(api_key=API_KEY)
 
 # Configure the chat model
@@ -33,8 +32,23 @@ model = genai.GenerativeModel(
     })
 chat = model.start_chat(history=[])
 
-# Initialize txtai embeddings
 txtai_embeddings = Embeddings({"path": "sentence-transformers/paraphrase-MiniLM-L3-v2", "content": True})
+
+# Directory to save uploaded files
+UPLOAD_DIR = "uploaded_files"
+
+# Ensure the upload directory exists
+if not os.path.exists(UPLOAD_DIR):
+    os.makedirs(UPLOAD_DIR)
+
+# Save uploaded files
+def save_uploaded_file(uploaded_file):
+    with open(os.path.join(UPLOAD_DIR, uploaded_file.name), "wb") as f:
+        f.write(uploaded_file.getvalue())
+
+# Get list of existing files
+def get_existing_files():
+    return [os.path.join(UPLOAD_DIR, f) for f in os.listdir(UPLOAD_DIR) if os.path.isfile(os.path.join(UPLOAD_DIR, f))]
 
 # Function to read all PDFs from a folder and return concatenated text
 def get_pdf_text(pdf_docs):
@@ -68,18 +82,29 @@ def get_pptx_text(pptx_docs):
 # Function to read TXT files and return concatenated text
 def get_txt_text(txt_docs):
     text = ""
-    for txt in txt_docs:
-        text += txt.read().decode('utf-8') + "\n"
+    for txt_file in txt_docs:
+        text += txt_file.read().decode('utf-8') + "\n"
     return text
 
 # Function to read CSV files and return concatenated text
 def get_csv_text(csv_docs):
     text = ""
-    for csvfile in csv_docs:
-        csvreader = csv.reader(csvfile.read().decode('utf-8').splitlines())
+    for csv_file in csv_docs:
+        csvreader = csv.reader(csv_file.read().decode('utf-8').splitlines())
         for row in csvreader:
             text += ' '.join(row) + "\n"
     return text
+
+# Get txtai embeddings
+def create_txtai_embeddings(text_chunks):
+    data = [{"text": chunk} for chunk in text_chunks]
+    txtai_embeddings.index(data)
+
+# Function to search using txtai
+def search_txtai(query):
+    results = txtai_embeddings.search(query, limit=50)
+    return results
+
 
 # Split text into chunks
 def get_text_chunks(text):
@@ -92,16 +117,6 @@ def get_vector_store(chunks):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")  # type: ignore
     vector_store = FAISS.from_texts(chunks, embedding=embeddings)
     vector_store.save_local("faiss_index")
-
-# Get txtai embeddings
-def create_txtai_embeddings(text_chunks):
-    data = [{"text": chunk} for chunk in text_chunks]
-    txtai_embeddings.index(data)
-
-# Function to search using txtai
-def search_txtai(query):
-    results = txtai_embeddings.search(query, limit=10)
-    return results
 
 def get_conversational_chain():
     prompt_template = """
@@ -157,25 +172,34 @@ def main():
         type=['pdf', 'docx', 'pptx', 'txt', 'csv'])
 
     if uploaded_files:
-        all_text = ""
-        pdf_files = [file for file in uploaded_files if file.name.endswith(".pdf")]
-        docx_files = [file for file in uploaded_files if file.name.endswith(".docx")]
-        pptx_files = [file for file in uploaded_files if file.name.endswith(".pptx")]
-        txt_files = [file for file in uploaded_files if file.name.endswith(".txt")]
-        csv_files = [file for file in uploaded_files if file.name.endswith(".csv")]
+        for file in uploaded_files:
+            save_uploaded_file(file)
+    
+    # Load existing files
+    existing_files = get_existing_files()
+    all_text = ""
+    pdf_files = [file for file in existing_files if file.endswith(".pdf")]
+    docx_files = [file for file in existing_files if file.endswith(".docx")]
+    pptx_files = [file for file in existing_files if file.endswith(".pptx")]
+    txt_files = [open(file, "rb") for file in existing_files if file.endswith(".txt")]  # Open files as file-like objects
+    csv_files = [open(file, "rb") for file in existing_files if file.endswith(".csv")]  # Open files as file-like objects
 
-        if pdf_files:
-            all_text += get_pdf_text(pdf_files)
-        if docx_files:
-            all_text += get_docx_text(docx_files)
-        if pptx_files:
-            all_text += get_pptx_text(pptx_files)
-        if txt_files:
-            all_text += get_txt_text(txt_files)
-        if csv_files:
-            all_text += get_csv_text(csv_files)
+    if pdf_files:
+        all_text += get_pdf_text(pdf_files)
+    if docx_files:
+        all_text += get_docx_text(docx_files)
+    if pptx_files:
+        all_text += get_pptx_text(pptx_files)
+    if txt_files:
+        all_text += get_txt_text(txt_files)
+    if csv_files:
+        all_text += get_csv_text(csv_files)
 
-    st.title("Chat with PDF files using Gemini 🙋‍♂")
+    if all_text:
+        chunks = all_text.split("\n")
+        create_txtai_embeddings(chunks)
+
+    st.title("Chat with Documents using Gemini 🙋‍♂")
     st.write("Welcome to the chat!")
     st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
 
@@ -208,12 +232,12 @@ def main():
                 results = search_txtai(search_query)
                 st.write("Search Results:")
                 for result in results:
-                    st.write(result)
+                    st.write(result["text"])
             else:
                 st.write("Please enter a query to search.")
 
         if st.button("View Content"):
-            if uploaded_files:
+            if existing_files:
                 st.write("Content of the uploaded files:")
                 st.write(all_text)
             else:
