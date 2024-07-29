@@ -2,6 +2,7 @@ import streamlit as st
 from PyPDF2 import PdfReader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 import os
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
 from dotenv import load_dotenv
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 import google.generativeai as genai
