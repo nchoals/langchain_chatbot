@@ -90,9 +90,14 @@ def get_txt_text(txt_docs):
 def get_csv_text(csv_docs):
     text = ""
     for csv_file in csv_docs:
-        csvreader = csv.reader(csv_file.read().decode('utf-8').splitlines())
-        for row in csvreader:
-            text += ' '.join(row) + "\n"
+        try:
+            # Attempt to decode using utf-8, ignoring errors
+            decoded_content = csv_file.read().decode('utf-8', errors='ignore')
+            csvreader = csv.reader(decoded_content.splitlines())
+            for row in csvreader:
+                text += ' '.join(row) + "\n"
+        except Exception as e:
+            st.error(f"Error reading CSV file: {e}")
     return text
 
 # Get txtai embeddings
