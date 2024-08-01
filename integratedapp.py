@@ -36,6 +36,7 @@ txtai_embeddings = Embeddings({"path": "sentence-transformers/paraphrase-MiniLM-
 
 # Directory to save uploaded files
 UPLOAD_DIR = "uploaded_files"
+DOCS_DIR = "documentation"  
 
 # Ensure the upload directory exists
 if not os.path.exists(UPLOAD_DIR):
@@ -47,8 +48,8 @@ def save_uploaded_file(uploaded_file):
         f.write(uploaded_file.getvalue())
 
 # Get list of existing files
-def get_existing_files():
-    return [os.path.join(UPLOAD_DIR, f) for f in os.listdir(UPLOAD_DIR) if os.path.isfile(os.path.join(UPLOAD_DIR, f))]
+def get_existing_files(directory=UPLOAD_DIR):
+    return [os.path.join(directory, f) for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
 
 # Function to read all PDFs from a folder and return concatenated text
 def get_pdf_text(pdf_docs):
@@ -105,7 +106,6 @@ def search_txtai(query):
     results = txtai_embeddings.search(query, limit=50)
     return results
 
-
 # Split text into chunks
 def get_text_chunks(text):
     splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=1000)
@@ -120,8 +120,7 @@ def get_vector_store(chunks):
 
 def get_conversational_chain():
     prompt_template = """
-    Answer the question as detailed as possible from the provided context, make sure to provide all the details. If the answer is not in
-    the provided context, just say, "The answer is not available in the context", don't provide the wrong answer\n\n
+    Answer the question as detailed as possible from the provided context, make sure to provide all the details.\n\n
     Context:\n{context}?\n
     Question:\n{question}\n
     Answer:
@@ -151,16 +150,6 @@ def user_input(user_question):
 
     return response['output_text']
 
-def summarize_text(text):
-    summary_prompt = PromptTemplate(
-        template="Summarize the following text: {input_text}",
-        input_variables=["input_text"]
-    )
-    model = ChatGoogleGenerativeAI(model="gemini-pro", client=genai, temperature=0.5)
-    summary_chain = load_qa_chain(llm=model, chain_type="stuff", prompt=summary_prompt)
-    summary = summary_chain.run({"input_text": text})
-    return summary['output_text']
-
 def main():
     st.set_page_config(page_title="NYP Chatbot", page_icon="🖐", layout="wide")
 
@@ -176,7 +165,7 @@ def main():
             save_uploaded_file(file)
     
     # Load existing files
-    existing_files = get_existing_files()
+    existing_files = get_existing_files(DOCS_DIR)  # Load from the documentation folder
     all_text = ""
     pdf_files = [file for file in existing_files if file.endswith(".pdf")]
     docx_files = [file for file in existing_files if file.endswith(".docx")]
