@@ -19,11 +19,9 @@ from txtai.embeddings import Embeddings
 
 load_dotenv()
 
-# Configure the API key
 API_KEY = os.getenv("API_KEY")
 genai.configure(api_key=API_KEY)
 
-# Configure the chat model
 model = genai.GenerativeModel(
     model_name='gemini-pro',
     safety_settings={
@@ -34,24 +32,19 @@ chat = model.start_chat(history=[])
 
 txtai_embeddings = Embeddings({"path": "sentence-transformers/paraphrase-MiniLM-L3-v2", "content": True})
 
-# Directory to save uploaded files
 UPLOAD_DIR = "uploaded_files"
-DOCS_DIR = "documentation"  
+DOCS_DIR = "documentation"
 
-# Ensure the upload directory exists
 if not os.path.exists(UPLOAD_DIR):
     os.makedirs(UPLOAD_DIR)
 
-# Save uploaded files
 def save_uploaded_file(uploaded_file):
     with open(os.path.join(UPLOAD_DIR, uploaded_file.name), "wb") as f:
         f.write(uploaded_file.getvalue())
 
-# Get list of existing files
 def get_existing_files(directory=UPLOAD_DIR):
     return [os.path.join(directory, f) for f in os.listdir(directory) if os.path.isfile(os.path.join(directory, f))]
 
-# Function to read all PDFs from a folder and return concatenated text
 def get_pdf_text(pdf_docs):
     text = ""
     for pdf in pdf_docs:
@@ -60,7 +53,6 @@ def get_pdf_text(pdf_docs):
             text += page.extract_text()
     return text
 
-# Function to read DOCX files and return concatenated text
 def get_docx_text(docx_docs):
     text = ""
     for docx in docx_docs:
@@ -69,7 +61,6 @@ def get_docx_text(docx_docs):
             text += para.text + "\n"
     return text
 
-# Function to read PPTX files and return concatenated text
 def get_pptx_text(pptx_docs):
     text = ""
     for pptx in pptx_docs:
@@ -80,19 +71,16 @@ def get_pptx_text(pptx_docs):
                     text += shape.text + "\n"
     return text
 
-# Function to read TXT files and return concatenated text
 def get_txt_text(txt_docs):
     text = ""
     for txt_file in txt_docs:
         text += txt_file.read().decode('utf-8') + "\n"
     return text
 
-# Function to read CSV files and return concatenated text
 def get_csv_text(csv_docs):
     text = ""
     for csv_file in csv_docs:
         try:
-            # Attempt to decode using utf-8, ignoring errors
             decoded_content = csv_file.read().decode('utf-8', errors='ignore')
             csvreader = csv.reader(decoded_content.splitlines())
             for row in csvreader:
@@ -101,23 +89,19 @@ def get_csv_text(csv_docs):
             st.error(f"Error reading CSV file: {e}")
     return text
 
-# Get txtai embeddings
 def create_txtai_embeddings(text_chunks):
     data = [{"text": chunk} for chunk in text_chunks]
     txtai_embeddings.index(data)
 
-# Function to search using txtai
 def search_txtai(query):
     results = txtai_embeddings.search(query, limit=50)
     return results
 
-# Split text into chunks
 def get_text_chunks(text):
     splitter = RecursiveCharacterTextSplitter(chunk_size=10000, chunk_overlap=1000)
     chunks = splitter.split_text(text)
     return chunks
 
-# Get embeddings for each chunk
 def get_vector_store(chunks):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")  # type: ignore
     vector_store = FAISS.from_texts(chunks, embedding=embeddings)
@@ -131,10 +115,7 @@ def get_conversational_chain():
     Answer:
     """
 
-    model = ChatGoogleGenerativeAI(model="gemini-pro",
-                                   client=genai,
-                                   temperature=0.3,
-                                   )
+    model = ChatGoogleGenerativeAI(model="gemini-pro", client=genai, temperature=0.3)
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
     chain = load_qa_chain(llm=model, chain_type="stuff", prompt=prompt)
     return chain
@@ -158,25 +139,23 @@ def user_input(user_question):
 def main():
     st.set_page_config(page_title="NYP Chatbot", page_icon="🖐", layout="wide")
 
+    st.title("NYP Chatbot 🙋‍♂")
+
     st.title("Upload and Process Documents")
 
-    # File uploader
-    uploaded_files = st.file_uploader(
-        "Upload your files (PDF, DOCX, PPTX, TXT, CSV)", accept_multiple_files=True,
-        type=['pdf', 'docx', 'pptx', 'txt', 'csv'])
+    uploaded_files = st.file_uploader("Upload your files (PDF, DOCX, PPTX, TXT, CSV)", accept_multiple_files=True, type=['pdf', 'docx', 'pptx', 'txt', 'csv'])
 
     if uploaded_files:
         for file in uploaded_files:
             save_uploaded_file(file)
     
-    # Load existing files
-    existing_files = get_existing_files(DOCS_DIR)  # Load from the documentation folder
+    existing_files = get_existing_files(DOCS_DIR)
     all_text = ""
     pdf_files = [file for file in existing_files if file.endswith(".pdf")]
     docx_files = [file for file in existing_files if file.endswith(".docx")]
     pptx_files = [file for file in existing_files if file.endswith(".pptx")]
-    txt_files = [open(file, "rb") for file in existing_files if file.endswith(".txt")]  # Open files as file-like objects
-    csv_files = [open(file, "rb") for file in existing_files if file.endswith(".csv")]  # Open files as file-like objects
+    txt_files = [open(file, "rb") for file in existing_files if file.endswith(".txt")]
+    csv_files = [open(file, "rb") for file in existing_files if file.endswith(".csv")]
 
     if pdf_files:
         all_text += get_pdf_text(pdf_files)
@@ -193,11 +172,20 @@ def main():
         chunks = all_text.split("\n")
         create_txtai_embeddings(chunks)
 
-    st.title("Chat with Documents using Gemini 🙋‍♂")
+    if uploaded_files or existing_files:
+        with st.expander("Uploaded and Preloaded Files"):
+            st.write("Uploaded Files:")
+            for file in uploaded_files:
+                st.write(f"- {file.name}")
+            st.write("Preloaded Files:")
+            for file in existing_files:
+                st.write(f"- {os.path.basename(file)}")
+
     st.write("Welcome to the chat!")
     st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
 
-    # Chat input
+
+
     if "messages" not in st.session_state.keys():
         st.session_state.messages = [
             {"role": "assistant", "content": "You can ask questions about the provided documents."}]
