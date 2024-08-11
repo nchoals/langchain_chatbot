@@ -1,0 +1,58 @@
+Data Governance Overview Summary
+Classification and Sensitivity:
+The document is classified as "Restricted and Non-Sensitive" and is currently under review.
+
+Introduction:
+
+Importance of Data Governance:
+Data Governance has become essential for organizations to enhance operational efficiency, customer experience, organizational valuation, and monetization of data. It involves the structured management of data as an enterprise asset, including improving data quality, understanding data meaning, and leveraging data for competitive advantage.
+Key Elements of Data Governance:
+
+Governing Body:
+
+NYP ICT & Data Steering Committee (IDSC):
+Oversees the governance of data within the organization.
+Principles:
+
+Strategic Intent and Thrusts:
+These guide the direction and priorities of the Data Governance program.
+Policies and Procedures:
+
+NYP Data Management Policy:
+Outlines the policies and procedures governing data management within the organization.
+Execution Plan and Metrics:
+
+Strategic Initiatives:
+Plans and metrics to execute the Data Governance program effectively.
+NYP Data Management Framework:
+
+Phases of Data Life-Cycle:
+The framework highlights the core functions and operational emphases across five phases of the data life-cycle:
+
+Data Acquisition
+Data Fusion
+Data Access & Distribution
+Data Exploitation
+Data Destruction
+Horizontal Enablers:
+These provide the support needed to implement the NYP Data Strategy.
+
+Compliance:
+
+Role of Compliance in Data Governance:
+Compliance is a critical aspect of governance. The CIO-CDO-CISO nexus forms the core of the Data Management Committee (DMC), which coordinates various aspects within the IM for ICT&SS.
+
+NYP Data Management Policy:
+Provides the guidance and standards for implementing data-related work at NYP.
+
+Data Security:
+
+Guidance Documents:
+The DMC follows guides such as "Requirements to Protect Personal Data" and "Data Classification" published in 2020 to ensure data security.
+
+Operations Covered:
+
+Data Collection
+Data Classification
+Data Sharing
+Data Storage

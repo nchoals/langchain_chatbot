@@ -1,0 +1,8 @@
+
+Data Governance - Data Management Committee (DMC):
+
+Roles and Responsibilities:
+- The Data Management Committee (DMC) consists of members like the CIO, CISO, CDO, and CNC Directorate, among others.
+- They are responsible for harmonizing data efforts, focusing on compliance, data quality, and classification.
+- They provide resolutions based on principles like SG-DRM standard adherence and minimizing duplication.
+- Decisions consider cost, effort, and sustainability.

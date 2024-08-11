@@ -1,0 +1,32 @@
+
+Guide to Right Classification - NYP
+
+1. Introduction
+   - Overview of the Right Classification Framework.
+   - Importance of correct classification based on the potential damage of unauthorized disclosure.
+
+2. Security Classification Levels
+   - Top Secret: Exceptionally grave damage to national security.
+   - Secret: Serious damage to national interests/security.
+   - Confidential: Serious damage to an agency; some damage to national interests.
+   - Restricted: Some damage to an agency.
+   - Unclassified: Information that is not classified as RCST.
+
+3. Official Information
+   - Definition: All information that public officers acquire, generate, or cause to be generated in the course of their duties, except for publicly available information.
+   - Classified Information: Official information assigned a security classification.
+
+4. New Markers for Unclassified Information
+   - Official (Closed): Negligible or no impact to agency functions, national interests, or national security; not disclosed to the public.
+   - Official (Open): Similar to Official (Closed) but disclosed to the public domain.
+
+5. Decision Tree for Security Classification
+   - Step 1: Does unauthorized disclosure cause significant disruption? (Yes: Confidential, No: Proceed to next step)
+   - Step 2: Does it disrupt agency’s critical process? (Yes: Confidential, No: Proceed)
+   - Step 3: Does it disrupt the agency’s process? (Yes: Restricted, No: Proceed)
+   - Step 4: Is the system inward-facing or accessible to the public? (Yes: Official (Closed)/Official (Open))
+
+6. Sensitivity Categorization
+   - High Sensitivity: Serious damage to individuals or businesses if leaked.
+   - Normal Sensitivity: Some damage to individuals or businesses.
+   - Non-Sensitive: Negligible or no damage.

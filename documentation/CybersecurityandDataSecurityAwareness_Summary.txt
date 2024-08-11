@@ -1,0 +1,34 @@
+Cybersecurity and Data Security Awareness Document Summary
+Classification and Sensitivity:
+The document contains classified and sensitive information intended exclusively for NYP staff. It includes publications and documents that should not be downloaded or shared with others.
+
+Key Sections:
+
+Awareness:
+FY23 WOG Simulated Phishing Email Scenarios:
+Highlights emails used in phishing scenarios, including signs to identify phishing attempts.
+
+Scenario 1: Unusual sign-in activity
+Scenario 2: Free vouchers
+Scenario 3: Mailbox Full
+How to Spot a Phishing Email:
+
+Common Features of Phishing Emails:
+Too Good To Be True: Offers that seem unrealistic.
+Sense of Urgency: Tactics to prompt immediate action.
+Hyperlinks: Misleading links that could lead to malicious sites.
+Attachments: Unexpected attachments that may contain malware.
+Unusual Sender: Emails from suspicious or unexpected sources.
+Cybersecurity Training:
+
+Encourages staff to complete mandatory cybersecurity and data protection training modules.
+Provides tips and resources for enhancing cyber hygiene and security practices.
+Cyber and Data Security Awareness Briefings:
+
+Contains links to various briefings and advisories from 2019 to 2021, focusing on cybersecurity and data protection practices.
+Advisories and Alerts:
+
+Includes announcements and guidelines on security, NRIC advisory for public sector agencies, and resources on safe online practices.
+Important Notes:
+
+The information shared in the document is strictly for NYP staff only, and any unauthorized download or sharing is prohibited.

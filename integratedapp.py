@@ -172,15 +172,6 @@ def main():
         chunks = all_text.split("\n")
         create_txtai_embeddings(chunks)
 
-    if uploaded_files or existing_files:
-        with st.expander("Uploaded and Preloaded Files"):
-            st.write("Uploaded Files:")
-            for file in uploaded_files:
-                st.write(f"- {file.name}")
-            st.write("Preloaded Files:")
-            for file in existing_files:
-                st.write(f"- {os.path.basename(file)}")
-
     st.write("Welcome to the chat!")
     st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
 
