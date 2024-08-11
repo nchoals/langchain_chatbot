@@ -109,20 +109,20 @@ def get_vector_store(chunks):
 
 def get_conversational_chain():
     prompt_template = """
-    Answer the question as detailed as possible from the provided context, make sure to provide all the details.\n\n
+    Answer the question as thoroughly and detailed as possible, providing all relevant information and elaborating on key points.\n\n
     Context:\n{context}?\n
     Question:\n{question}\n
     Answer:
     """
 
-    model = ChatGoogleGenerativeAI(model="gemini-pro", client=genai, temperature=0.3)
+    model = ChatGoogleGenerativeAI(model="gemini-pro", client=genai, temperature=0.5)
     prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
     chain = load_qa_chain(llm=model, chain_type="stuff", prompt=prompt)
     return chain
 
 def clear_chat_history():
     st.session_state.messages = [
-        {"role": "assistant", "content": "You can ask questions about the provided documents."}]
+        {"role": "assistant", "content": "Hello! Ask me questions on NYP data policies or upload your own documents."}]
 
 def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")  # type: ignore
@@ -175,27 +175,27 @@ def main():
     st.write("Welcome to the chat!")
     st.sidebar.button('Clear Chat History', on_click=clear_chat_history)
 
-
-
     if "messages" not in st.session_state.keys():
         st.session_state.messages = [
-            {"role": "assistant", "content": "You can ask questions about the provided documents."}]
+            {"role": "assistant", "content": "Hello! Ask me questions on NYP data policies or upload your own documents."}]
 
+    # Display each message without showing the role name
     for message in st.session_state.messages:
         with st.chat_message(message["role"]):
-            st.markdown(f"{message['role'].capitalize()}: {message['content']}")
+            st.markdown(message["content"])
 
+    # Handle user input
     if prompt := st.chat_input():
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user"):
-            st.markdown(f"User: {prompt}")
+            st.markdown(prompt)
 
         if st.session_state.messages[-1]["role"] != "assistant":
             with st.chat_message("assistant"):
                 with st.spinner("Thinking..."):
                     response = user_input(prompt)
                     st.session_state.messages.append({"role": "assistant", "content": response})
-                    st.markdown(f"Assistant: {response}")
+                    st.markdown(response)
 
     with st.sidebar:
         st.title("Search and View Content")
