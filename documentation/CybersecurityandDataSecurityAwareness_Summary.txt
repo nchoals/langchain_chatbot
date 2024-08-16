@@ -14,11 +14,12 @@ Scenario 3: Mailbox Full
 How to Spot a Phishing Email:
 
 Common Features of Phishing Emails:
-Too Good To Be True: Offers that seem unrealistic.
-Sense of Urgency: Tactics to prompt immediate action.
-Hyperlinks: Misleading links that could lead to malicious sites.
-Attachments: Unexpected attachments that may contain malware.
-Unusual Sender: Emails from suspicious or unexpected sources.
+1. Too Good To Be True - Lucrative offers and eye-catching or attention-grabbing statements are designed to attract people’s attention immediately. For instance, you have won an iPhone, a lottery, or some other lavish prize. Just don't click on any suspicious emails. Remember that if it seems to good to be true, it probably
+2. Sense of Urgency - A favorite tactic amongst cybercriminals is to ask you to act fast because the super deals are only for a limited time. Some of them will even have only a few minutes to respond. When you come across these kinds of emails, it's best to just ignore them. Sometimes, they will tell you that your account wunless you update your personal details immediately. Most reliable organizations give ample time before they terminate an account and they never ask patrons tpersonal details over the Internet. When in doubt, visit the source directly rather than clicking a link in an email.
+3. Hyperlinks - A link may not be all it appears to be. Hovering over a link shows you the actual URL where you will be directed upon clicking on it. It could be comor it could be a popular website with a misspelling, for instance www.bankofarnerica.com - the 'm' is actually an 'r' and an 'n', so look carefully.
+4. Attachments - If you see an attachment in an email you weren't expecting or that doesn't make sense, don't open it! They often contain payloads like ransomwaviruses. The only file type that is always safe to click on is a .txt file.
+5. Unusual Sender - Whether it looks like it's from someone you don't know or someone you do know, if anything seems out of the ordinary, unexpected, out of csuspicious in general don't click on it!
+
 Cybersecurity Training:
 
 Encourages staff to complete mandatory cybersecurity and data protection training modules.

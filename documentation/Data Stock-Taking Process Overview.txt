@@ -8,15 +8,11 @@ Ongoing Process:
 
 Data stock-taking is an ongoing process due to the large volume of data involved.
 The involvement of data owners and their teams is crucial as they possess domain knowledge and operational experience to prioritize the stock-taking process.
-Process Steps:
 
-Engagement:
-The process begins with engagement from departments such as HR, RGO, EM, and SDAR, with plans to expand further.
-Information Gathering:
-Templates aligned with SG-DRM are provided to data owners and their teams to facilitate information gathering.
-Discussions:
-Organized discussions aim to resolve issues related to data classification, completeness, and the need for harmonization.
-Finalization and Upload:
-Finalized data lists are uploaded to a centralized metadata listing site, which will eventually be integrated into the NYP Data Catalog.
-Data Catalog:
-The NYP Data Catalog will be accessible to staff, allowing them to view and sample data segments for testing purposes.
+Process Steps of data stock-taking:
+
+Engagement: The process begins with engagement from departments such as HR, RGO, EM, and SDAR, with plans to expand further.
+Information Gathering: Templates aligned with SG-DRM are provided to data owners and their teams to facilitate information gathering.
+Discussions: Organized discussions aim to resolve issues related to data classification, completeness, and the need for harmonization.
+Finalization and Upload: Finalized data lists are uploaded to a centralized metadata listing site, which will eventually be integrated into the NYP Data Catalog.
+Data Catalog: The NYP Data Catalog will be accessible to staff, allowing them to view and sample data segments for testing purposes.

@@ -27,6 +27,15 @@ Guide to Right Classification - NYP
    - Step 4: Is the system inward-facing or accessible to the public? (Yes: Official (Closed)/Official (Open))
 
 6. Sensitivity Categorization
-   - High Sensitivity: Serious damage to individuals or businesses if leaked.
-   - Normal Sensitivity: Some damage to individuals or businesses.
-   - Non-Sensitive: Negligible or no damage.
+   - High Sensitivity: Causes serious physical, financial, or sustained emotional injury or social stigma to the individual 
+     E.g.: Loss of life or physical harm; loss of employability, reputation and insurability; case information that reveals the identity of victims of sexual assault etc., criminal or investigative records, etc.
+     Causes sustained financial loss E.g.: Inability to conduct normal business operations, significant and irreversible loss of competitive advantage, major damage to reputation.
+
+   - Normal Sensitivity: Causes temporary and minor emotional distress or disturbance to the individual
+     E.g.: Locational information, photographic images, etc.
+     Causes a reduction in competitiveness or a compromise of business interests
+     E.g.: Loss of potential business opportunities, some damage to reputation.
+
+   - Non-Sensitive: Does not cause physical, financial, or emotional injury to the individual; OR in personal information that is socially expected to be openly available.
+     Does notimpact a business’ processes or operations; OR is
+     Business information that is socially accepted as openly available.

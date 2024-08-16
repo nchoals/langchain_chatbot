@@ -7,23 +7,24 @@ Key Points:
 Strategic Overview:
 
 NYP Data Strategy is structured around 1 Strategic Intent, 4 Strategic Thrusts, and 7 Strategic Initiatives aimed at achieving NYP's key mission.
+
 Strategic Intent:
 
 The overarching goal is Achieving NYP's Key Mission.
-Strategic Thrusts:
-The strategy is supported by four key thrusts:
+
+The 4 strategic thrusts are:
 
 NYP Data Architecture
 Digital Infrastructure
 Build Capabilities and Democratise Use
 Support Public-Private Partnerships
-Strategic Initiatives:
-The seven initiatives driving the strategy are:
 
-Stock-Take
-Data Architecture
-Data Governance
-Data Integration
-Data Sharing and Distribution
-Data Capabilities
-Public-Private Partnerships
+
+The 7 strategic intiatives are:
+Stock-Take - register datasets, classify    
+Data Architecture - policy, compliance, quality, lineage
+Data Governance - represent core business processes
+Data Integration - centralised repository, standardise, good quality
+Data Sharing and Distribution - access, catalog, glossary, use
+Data Capabilities - training, application projects, propagate
+Public-Private Partnerships - data.gov.sg, strategic collaborations
