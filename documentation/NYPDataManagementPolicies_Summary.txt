@@ -1,0 +1,15 @@
+NYP Data Management Policies Overview
+Classification and Sensitivity:
+The document is classified as "Restricted and Non-Sensitive" and is currently under review.
+
+Key Points:
+
+Data Exploitation:
+
+Central to NYP's data strategy, data exploitation is essential for informing policies, enhancing program effectiveness, and improving service delivery as part of the "digital-to-the-core" initiative in the Public Sector Transformation efforts.
+Data Security and Trust:
+
+While exploiting data for government efficiency, it is crucial to ensure data security. Protecting citizens' privacy is key to maintaining their trust and confidence in how data is used.
+Data Management Policies and Guidelines:
+
+The NYP data management policies and guidelines dictate the processes for collecting, storing, using, sharing, and disposing of data at NYP. These policies are adapted from IM8 and tailored to meet the needs of NYP's Corporate Departments and Schools, ensuring that data is managed and used securely.

@@ -1,0 +1,37 @@
+NYP Data Architecture Overview
+Classification and Sensitivity:
+The document is classified as "Restricted and Non-Sensitive" and is currently under review.
+
+Key Points:
+
+Importance of Data Architecture:
+
+Data architecture is a critical enabler in the NYP Data Management Framework, aligning with NYP's Vision and Mission. It plays a crucial role in representing core business processes where data is collected, processed, used, and stored.
+Alignment with NYP Vision and Mission:
+
+Data architecture must support NYP's goals by ensuring clear and consistent data definitions across all communication channels and platforms, facilitating a common vocabulary in discussions.
+Model Structure:
+
+The TOGAF definition of data architecture is adopted, viewing it as composed of models, policies, rules, or standards governing data collection, storage, integration, and usage.
+A 4-level hierarchical Categorical Model is used:
+Subject Area: Core data of the organization.
+Aspect: Perspectives or views of functional areas within each subject area.
+Category: The actual data object in the model.
+Sub-category: Attributes of the data object.
+Levels 1 and 2 are used for strategic discussions, while levels 3 and 4 are essential for technical implementation.
+Conceptual/Logical Model Overview:
+
+The conceptual model, particularly the "Learner" Subject Area, is highlighted, showing the overall structure and hierarchical expansion.
+Modelling Process:
+
+A collaborative process involving data modelling teams, data stewards, subject matter experts, and management to develop, fine-tune, and endorse data models.
+The process is designed to ensure the model's acceptance and alignment with organizational goals.
+Developed Data Models:
+
+Work has been done on data models for the following areas:
+HR
+Learner
+Course
+Estate Management
+Procurement
+Administration

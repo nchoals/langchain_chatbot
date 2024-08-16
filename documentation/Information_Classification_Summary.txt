@@ -1,0 +1,13 @@
+
+Data Governance - Information Classification & Handling Policy:
+
+Purpose:
+- Defines policies for information asset classification and handling for NYP staff.
+
+Information Classification:
+- Information assets are categorized by security (e.g., Restricted, Confidential) and sensitivity (e.g., Sensitive High, Sensitive Normal).
+- Proper classification ensures appropriate protection and control over unauthorized access or modification.
+
+Handling Policy:
+- Classified information should be securely handled, stored, and not left unattended.
+- Restrictions are placed on hosting, storing, or processing classified information in non-government facilities or public cloud services.

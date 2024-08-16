@@ -1,0 +1,41 @@
+
+Guide to Right Classification - NYP
+
+1. Introduction
+   - Overview of the Right Classification Framework.
+   - Importance of correct classification based on the potential damage of unauthorized disclosure.
+
+2. Security Classification Levels
+   - Top Secret: Exceptionally grave damage to national security.
+   - Secret: Serious damage to national interests/security.
+   - Confidential: Serious damage to an agency; some damage to national interests.
+   - Restricted: Some damage to an agency.
+   - Unclassified: Information that is not classified as RCST.
+
+3. Official Information
+   - Definition: All information that public officers acquire, generate, or cause to be generated in the course of their duties, except for publicly available information.
+   - Classified Information: Official information assigned a security classification.
+
+4. New Markers for Unclassified Information
+   - Official (Closed): Negligible or no impact to agency functions, national interests, or national security; not disclosed to the public.
+   - Official (Open): Similar to Official (Closed) but disclosed to the public domain.
+
+5. Decision Tree for Security Classification
+   - Step 1: Does unauthorized disclosure cause significant disruption? (Yes: Confidential, No: Proceed to next step)
+   - Step 2: Does it disrupt agency’s critical process? (Yes: Confidential, No: Proceed)
+   - Step 3: Does it disrupt the agency’s process? (Yes: Restricted, No: Proceed)
+   - Step 4: Is the system inward-facing or accessible to the public? (Yes: Official (Closed)/Official (Open))
+
+6. Sensitivity Categorization
+   - High Sensitivity: Causes serious physical, financial, or sustained emotional injury or social stigma to the individual 
+     E.g.: Loss of life or physical harm; loss of employability, reputation and insurability; case information that reveals the identity of victims of sexual assault etc., criminal or investigative records, etc.
+     Causes sustained financial loss E.g.: Inability to conduct normal business operations, significant and irreversible loss of competitive advantage, major damage to reputation.
+
+   - Normal Sensitivity: Causes temporary and minor emotional distress or disturbance to the individual
+     E.g.: Locational information, photographic images, etc.
+     Causes a reduction in competitiveness or a compromise of business interests
+     E.g.: Loss of potential business opportunities, some damage to reputation.
+
+   - Non-Sensitive: Does not cause physical, financial, or emotional injury to the individual; OR in personal information that is socially expected to be openly available.
+     Does notimpact a business’ processes or operations; OR is
+     Business information that is socially accepted as openly available.

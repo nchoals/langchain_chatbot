@@ -1,0 +1,7 @@
+
+Data Governance - Governance Structure - NYP Level:
+
+Governance Structure:
+- The ICT and Digitalisation Steering Committee (IDSC), chaired by the PCEO, guides the data governance strategy.
+- The governance structure emphasizes leadership, accountability, and collaboration across teams, including CIO, CISO, CDO, and CNC Directorate.
+- Two key committees, the DMC (Data Management Committee) and DAC (Data Application Committee), focus on compliance, data quality, classification, and data usage.
