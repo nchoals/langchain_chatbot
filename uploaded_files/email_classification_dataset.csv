@@ -1,0 +1,55 @@
+email_text,label
+"This document contains highly sensitive information about project X, including confidential client data and proprietary technology details. Access is restricted to authorized personnel only.",Confidential
+The following is a confidential client data for the current quarter analysis. Please do not share this information with anyone outside of the company.,Official (Closed)
+Details about the upcoming product release for internal distribution only. This information is not to be shared with external parties until the official launch date.,Official (Open)
+"Official memo regarding company policy changes, effective immediately. All employees are required to comply with the new policies.",Top Secret
+"Top secret mission details for next month's operation, including classified intelligence and strategic plans. Eyes only for authorized personnel.",Top Secret
+"Internal review notes for project Delta, including confidential project details and proprietary technology information.",Secret
+"Public announcement for the new product launch, including marketing materials and press releases.",Official (Open)
+"Restricted access details for the internal server, including login credentials and access protocols.",Restricted
+"Official statement for media release, including company responses to recent events and crisis management protocols.",Official (Closed)
+"Confidential financial report for the last quarter, including sensitive financial data and proprietary business information.",Confidential
+"Meeting minutes from the executive board, including confidential discussions and strategic decisions.",Official (Closed)
+"Classified details about defense contracts, including sensitive government information and proprietary technology details.",Top Secret
+"Restricted document for senior management only, including confidential personnel information and proprietary business data.",Restricted
+"Official announcement about the company event, including event details and logistical information.",Official (Open)
+"Internal discussion on the new policies, including confidential feedback and suggestions from employees.",Official (Open)
+"Top secret files on the latest intelligence, including classified information and strategic plans. Eyes only for authorized personnel.",Top Secret
+"The project is classified as confidential, and all team members are required to sign a non-disclosure agreement before accessing project materials.",Confidential
+"Restricted information for internal use only, including confidential company data and proprietary business information.",Restricted
+"Confidential memo about upcoming layoffs, including sensitive personnel information and proprietary business data.",Confidential
+"Top secret research findings on AI development, including classified information and proprietary intellectual property.",Top Secret
+"Secret email discussing strategic acquisitions, including confidential company data and proprietary business information.",Secret
+"Official notice regarding office relocation, including logistical information and company updates.",Official (Open)
+"Restricted document outlining IT security protocols, including sensitive information and access controls.",Restricted
+"Confidential proposal for new client engagement, including sensitive business strategies and potential partnership details.",Confidential
+"Top secret product roadmap for next year, including strategic product development plans and market insights.",Top Secret
+"Confidential HR policy update, including changes to employee benefits and workplace policies.",Confidential
+"Official statement on environmental sustainability goals, including corporate initiatives and sustainability targets.",Official (Open)
+"Restricted budget allocation details, including financial plans and investment strategies.",Restricted
+"Confidential marketing campaign strategy, including target audience analysis and campaign metrics.",Confidential
+"Top secret research grant application, including project objectives and anticipated research outcomes.",Top Secret
+"Official company performance review presentation, including financial performance highlights and strategic goals achievement.",Official (Open)
+"Secret memo on employee benefits update, including changes to employee compensation and benefits packages.",Secret
+"Confidential supply chain optimization plan, including supply chain analysis and efficiency improvement strategies.",Confidential
+"Top secret competitive analysis report, including market intelligence and competitor strategies assessment.",Top Secret
+"Official corporate social responsibility initiative, including community engagement programs and sustainability efforts.",Official (Open)
+"Restricted legal advisory document, including legal advice and compliance recommendations.",Restricted
+"Confidential prototype design specifications, including product design details and development timeline.",Confidential
+"Top secret executive compensation details, including executive compensation structure and performance-based incentives.",Top Secret
+"Secret audit report findings, including audit results and recommendations for improvement.",Secret
+"Official public relations strategy outline, including media relations strategy and crisis communication plan.",Official (Open)
+"Restricted intellectual property protection strategy, including IP protection measures and patent portfolio management.",Restricted
+"Confidential R&D project update, including research progress and project timeline updates.",Confidential
+"Top secret government contract negotiations, including contract details and negotiation strategies.",Top Secret
+"Official customer satisfaction survey results, including survey responses and customer feedback analysis.",Official (Open)
+"Restricted partner collaboration agreement, including partnership terms and collaboration guidelines.",Restricted
+"Confidential secret prototype design specifications, including confidential product design details and development timeline.",Restricted
+"Top secret executive compensation details, including executive compensation structure and performance-based incentives.",Confidential
+"Secret audit report findings, including audit results and recommendations for improvement.",Top Secret
+"Official public relations strategy outline, including media relations strategy and crisis communication plan.",Official (Open)
+"Restricted intellectual property protection strategy, including IP protection measures and patent portfolio management.",Secret
+"Confidential R&D project update, including research progress and project timeline updates.",Confidential
+"Top secret government contract negotiations, including contract details and negotiation strategies.",Top Secret
+"Official customer satisfaction survey results, including survey responses and customer feedback analysis.",Official (Open)
+"Restricted partner collaboration agreement, including partnership terms and collaboration guidelines.",Restricted
